@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="BlogSite icon" href="{{ url_for('static', filename='images/fav.ico') }}" type="image/x-icon">
+    {% block style %}
+    <title>Blog Site | Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/spectre.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/spectre-icon.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/spectre-exp.min.css') }}">
+
+    {% endblock style %}
+</head>
+<body class="bg-dark">
+    <header class="navbar bg-secondary m-2 px-2 s-rounded">
+        <section class="navbar-section">
+            <a href="#" class="btn btn-link mx-1">About Us</a>
+            <a href="#" class="btn btn-link mx-1">Contact us</a>
+        </section>
+        <section class="navbar-center">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="BlogSite Logo" width="50px">
+        </section>
+        <section class="navbar-section">
+            <a href="{{ url_for('login') }}" class="btn btn-link mx-1">Login</a>
+            <a href="#" class="btn btn-link mx-1">Sign Up</a>
+        </section>
+    </header>
+    {% block body %}
+    
+    {% endblock body %}
+</body>
+</html>
+

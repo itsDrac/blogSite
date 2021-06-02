@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="BlogSite icon" href="../static/images/fav.ico" type="image/x-icon">
-    <title>Blog Site | Home Page</title>
-    <link rel="stylesheet" href="../static/css/spectre.min.css">
-    <link rel="stylesheet" href="../static/css/spectre-icons.min.css">
-    <link rel="stylesheet" href="../static/css/spectre-exp.min.css">
-</head>
-<body class="bg-dark">
-    <header class="navbar bg-secondary m-2 px-2 s-rounded">
-        <section class="navbar-section">
-            <a href="#" class="btn btn-link mx-1">About Us</a>
-            <a href="#" class="btn btn-link mx-1">Contact us</a>
-        </section>
-        <section class="navbar-center">
-            <img src="../static/images/logo.png" alt="BlogSite Logo" width="50px">
-        </section>
-        <section class="navbar-section">
-            <a href="#" class="btn btn-link mx-1">Login</a>
-            <a href="#" class="btn btn-link mx-1">Sign Up</a>
-        </section>
-    </header>
+{% extends "layout.html" %}
+{% block style %}
+{{ super() }}
+{% endblock style %}
+{% block body %}
     <div class="container">
         <div class="columns">
             <div class="column col-6 col-ml-auto">
@@ -124,5 +105,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+{% endblock body %}
