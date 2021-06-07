@@ -1,6 +1,7 @@
-from app import app
+from app import app, db
 from app.forms import LoginForm, RegisterForm
-from flask import render_template
+from app.models import User
+from flask import render_template, redirect, url_for
 
 @app.get('/')
 def home():
@@ -17,5 +18,8 @@ def login():
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
-        return form.data
+        u = User(name=form.name.data, email=form.email.data, password=form.password.data)
+        db.session.add(u)
+        db.session.commit()
+        return redirect(url_for('login'))
     return render_template("register.html", form=form)
