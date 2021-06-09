@@ -18,7 +18,8 @@ def login():
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
-        u = User(name=form.name.data, email=form.email.data, password=form.password.data)
+        u = User(name=form.name.data, email=form.email.data)
+        u.password = u.get_password(form.password.data)
         db.session.add(u)
         db.session.commit()
         return redirect(url_for('login'))
